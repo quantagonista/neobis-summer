@@ -1,0 +1,14 @@
+{
+  "name": "Evgeniy",
+  "surname": "Bobin",
+  "education": "KSTU",
+  "contacts":{
+    "email": "quantagonista@gmail.com",
+    "github": "github.com/quantagonista",
+  },
+
+  "job":{
+    "name": "Neobis",
+    "position": "Backend Developer",
+  }
+}
