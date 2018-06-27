@@ -1,9 +1,9 @@
 from django.db import models
 
 CONTACT_TYPES = (
-    (1, 'Facebook'),
-    (2, 'Email'),
-    (3, 'Phone'),
+    ('Facebook', 'Facebook'),
+    ('Email', 'Email'),
+    ('Phone', 'Phone'),
 )
 
 
@@ -26,12 +26,13 @@ class Branch(models.Model):
     class Meta:
         verbose_name_plural = 'Branches'
 
+
 class Contact(models.Model):
     type = models.IntegerField(choices=CONTACT_TYPES)
     value = models.CharField(max_length=30)
 
     def __str__(self):
-        return CONTACT_TYPES[self.type - 1][1]
+        return self.type
 
 
 class Course(models.Model):
@@ -43,7 +44,7 @@ class Course(models.Model):
     logo = models.URLField()
 
     class Meta:
-        default_related_name = 'courses'
+        default_related_name = 'Courses'
 
     def __str__(self):
         return self.name
