@@ -44,7 +44,7 @@ class Course(models.Model):
     logo = models.URLField()
 
     class Meta:
-        default_related_name = 'Courses'
+        default_related_name = 'courses'
 
     def __str__(self):
         return self.name

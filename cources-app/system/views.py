@@ -1,3 +1,5 @@
+import time
+
 from rest_framework import generics, status
 from rest_framework.response import Response
 
@@ -10,6 +12,7 @@ class CoursesListView(generics.ListCreateAPIView):
     serializer_class = CourseSerializer
 
     def create(self, request, *args, **kwargs):
+        t = time.time()
         contacts = request.data.pop('contacts')
         category = request.data.pop('category')
         branches = request.data.pop('branches')
@@ -34,6 +37,9 @@ class CoursesListView(generics.ListCreateAPIView):
 
         course.save()
         serializer = CourseSerializer(instance=course)
+        e = time.time() - t
+        print('views_time: ', e)
+
         return Response(data=serializer.data, status=status.HTTP_201_CREATED)
 
 
