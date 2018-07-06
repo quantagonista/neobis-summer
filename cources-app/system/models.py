@@ -21,14 +21,14 @@ class Category(models.Model):
 class Branch(models.Model):
     address = models.CharField(max_length=30)
     longtitude = models.CharField(max_length=30)
-    altitude = models.CharField(max_length=30)
+    latitude = models.CharField(max_length=30)
 
     class Meta:
         verbose_name_plural = 'Branches'
 
 
 class Contact(models.Model):
-    type = models.IntegerField(choices=CONTACT_TYPES)
+    type = models.CharField(max_length=10, choices=CONTACT_TYPES)
     value = models.CharField(max_length=30)
 
     def __str__(self):

@@ -6,7 +6,7 @@ from system.models import Branch, Contact, Category, Course
 class BranchSerializer(serializers.ModelSerializer):
     class Meta:
         model = Branch
-        fields = ('address', 'altitude', 'longtitude')
+        fields = ('address', 'latitude', 'longtitude')
 
 
 class ContactSerializer(serializers.ModelSerializer):
